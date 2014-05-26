@@ -1,5 +1,9 @@
 #!/bin/sh
 
-kill -TERM `cat /home/wiperdogdemo/mongo/var/run/mongodb/mongodb-replica-1.pid`
-kill -TERM `cat /home/wiperdogdemo/mongo/var/run/mongodb/mongodb-replica-2.pid`
-kill -TERM `cat /home/wiperdogdemo/mongo/var/run/mongodb/mongodb-replica-3.pid`
+BASEDIR=$(cd $(dirname $0);pwd)
+. $BASEDIR/defs.sh
+
+kill -TERM `cat $PID_REPLICA1`
+kill -TERM `cat $PID_REPLICA2`
+kill -TERM `cat $PID_REPLICA3`
+
